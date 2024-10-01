@@ -1,0 +1,676 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0e1b2a;
+    color: #d4d4d4;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+#webgl-background {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Плавающая навигация */
+.floating-nav {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.floating-nav .nav-point {
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: #e6b800;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.floating-nav .nav-point:hover {
+    background-color: #003366;
+}
+
+/* Структура секций */
+.section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.full-screen {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: #e6b800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #e6b800;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #c0c0c0;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #004d99;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: #003366;
+}
+
+/* Сетка изображений */
+.header-image,
+.about-image,
+.advantages-image {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 40px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.header-content{
+    margin: auto;
+}
+.animated-subtext{
+    text-align: center;
+}
+/* Улучшение изображения справа */
+.about-image {
+    width: 100%;
+    max-width: 50%;
+    object-fit: cover;
+    height: auto;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: 0;
+}
+strong {
+    color: #e6b800;
+    /* Жирный текст становится красным */
+}
+
+
+
+
+/* Стили для кнопки WhatsApp */
+.whatsapp-button {
+    display: inline-block;
+    padding: 20px 40px;
+    background-color: #25D366;
+    /* Цвет WhatsApp */
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: fixed;
+    bottom: 30px;
+    /* Расположение внизу страницы */
+    right: 30px;
+    /* Отступ справа */
+    z-index: 1000;
+    /* Поверх всех элементов */
+}
+
+/* Анимация при наведении */
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+    .whatsapp-button {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.left{
+    width: 40%;
+}
+.right{
+    width: 48%;
+}
+
+.rod{
+    display: flex;
+    justify-content: space-between;
+}
+#about{
+    width: 49%;
+}
+#advantages{
+    width: 45%;
+}
+
+/* Анимация увеличения при наведении */
+.hover-zoom {
+    transition: transform 0.3s ease-in-out;
+}
+
+.hover-zoom:hover {
+    transform: scale(1.05);
+}
+
+/* Отзывы */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    justify-content: center;
+    align-items: start;
+}
+
+.testimonial-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.05);
+}
+
+.testimonial-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.testimonial-name {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Контактная форма */
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    background: #333;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 10px;
+}
+
+#contact-form button {
+    background: #004d99;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contact-form button:hover {
+    background-color: #003366;
+}
+
+/* Футер */
+footer {
+    background: #0e1b2a;
+    color: #c0c0c0;
+    text-align: center;
+    padding: 40px 0;
+}
+
+footer p {
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+/* Сетки для контента */
+
+.services-grid,
+.market-grid,
+.achievements-grid,
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.services-grid{
+    justify-content: space-between;
+}
+
+.market-item,
+.service-item,
+.achievement-item,
+.news-item {
+    background-color: #1f2933;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.advantages-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* Позволяет элементам переноситься на следующую строку */
+    gap: 20px;
+    /* Добавим небольшой промежуток между блоками */
+}
+
+.advantage-item {
+    width: 36%;
+    /* Уменьшаем ширину, чтобы элементы помещались на одной строке */
+    min-width: 200px;
+    /* Минимальная ширина для лучшей адаптивности */
+}
+
+
+/* Анимация плавного появления снизу */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация плавного увеличения масштаба */
+@keyframes scaleUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Анимация плавного появления слева */
+@keyframes slideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Применение анимаций к элементам с классом animated-item */
+.animated-item {
+    opacity: 0;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.service-item:nth-child(1) {
+    animation-name: slideUp;
+    animation-delay: 0.2s;
+}
+
+.service-item:nth-child(2) {
+    animation-name: scaleUp;
+    animation-delay: 0.4s;
+}
+
+.service-item:nth-child(3) {
+    animation-name: slideLeft;
+    animation-delay: 0.6s;
+}
+
+.service-item:nth-child(4) {
+    animation-name: slideUp;
+    animation-delay: 0.8s;
+}
+
+
+
+
+
+
+/* Анимация плавного появления */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Применение анимации для блока "О компании" */
+.animated-item {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 0.5s;
+    /* Задержка для плавного эффекта */
+}
+
+/* Убедитесь, что эта анимация не перекрывает другие секции, если применимо */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Сетка для FAQ */
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Стили для карточек FAQ */
+.faq-card {
+    background-color: #1f2933;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    color: #ffffff;
+}
+
+.faq-card h3 {
+    font-size: 1.5rem;
+    color: #e6b800;
+    margin-bottom: 15px;
+}
+
+.faq-card p {
+    font-size: 1rem;
+    color: #c0c0c0;
+    line-height: 1.6;
+}
+
+/* Анимация при наведении */
+.faq-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.rod2{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.market-item h3,
+.service-item h3,
+.achievement-item h3,
+.news-item h3 {
+    color: #e6b800;
+    margin-bottom: 10px;
+}
+
+.market-item ul,
+.news-item ul {
+    list-style: none;
+    padding-left: 0;
+    color: #c0c0c0;
+}
+
+#market{
+    width: 48%;
+  
+}
+#market1 {
+    width: 48%;
+}
+
+.market-item ul li,
+.news-item ul li {
+    margin-bottom: 10px;
+}
+
+.market-item canvas {
+    margin-top: 20px;
+}
+
+/* Секция калькулятора */
+.calculator {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#calculator{
+    width: 30%;
+    margin: 3% auto auto auto;
+}
+.calculator label {
+    font-size: 1.2rem;
+    color: #c0c0c0;
+}
+
+.calculator input {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    background: #333;
+    color: white;
+}
+
+.calculator button {
+    margin-top: 20px;
+}
+
+/* FAQ стили */
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-item h3 {
+    color: #e6b800;
+    font-size: 1.5rem;
+}
+
+.faq-item p {
+    font-size: 1.1rem;
+    color: #c0c0c0;
+}
+
+
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    /* Общие изменения */
+    body {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .section {
+        padding: 50px 20px;
+    }
+
+    /* Плавающая навигация */
+    .floating-nav {
+        right: 10px;
+    }
+
+    /* Блоки контента */
+    .full-screen {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rod,
+    .rod2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+
+    .advantages-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .advantage-item {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    /* Сетка контента */
+    .services-grid,
+    .market-grid,
+    .achievements-grid,
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Калькулятор */
+    #calculator {
+        width: 100%;
+    }
+
+    /* FAQ */
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Контактная форма */
+    #contact {
+        padding: 20px;
+    }
+
+    /* Кнопка WhatsApp */
+    .whatsapp-button {
+        right: 10px;
+        bottom: 10px;
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
